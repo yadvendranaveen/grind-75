@@ -15,9 +15,6 @@ class Solution:
                 list2 = list2.next
             dummy = dummy.next
 
-        if list1:
-            dummy.next = list1
-        if list2:
-            dummy.next = list2
+        dummy.next = list1 or list2
         return head.next
 
