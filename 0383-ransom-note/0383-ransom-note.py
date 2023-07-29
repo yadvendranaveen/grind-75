@@ -1,9 +1,4 @@
-class Solution:
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        rc = Counter(ransomNote)
-        rm = Counter(magazine)
-        
-        for alphabet, count in rc.items():
-            if count > rm[alphabet]:
-                return False
-        return True
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        st1, st2 = Counter(ransomNote), Counter(magazine)
+        return st1 <= st2
