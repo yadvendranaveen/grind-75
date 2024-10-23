@@ -22,6 +22,9 @@ class Solution:
             ans+=1
         return 0
 
+'''
+Time Complexity :- BigO(M^2 * N), where M is size of dequeued word & N is size of our word list
 
-                    
+Space Complexity :- BigO(M * N) where M is no. of character that we had in our string & N is the size of our wordList.
+'''
 
