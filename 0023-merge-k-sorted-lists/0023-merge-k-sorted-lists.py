@@ -10,8 +10,7 @@ class Solution:
         for i, head in enumerate(lists):
             if head:   heappush(pq, (head.val, i, head)) # i is put in there in case val is same for 2 ListNode, then idx will be used for sorting by heap. Since ListNode obj can't be compared
 
-        dummy = ListNode(0)
-        current = dummy
+        dummy = current = ListNode(0)
         while pq:
             _, i, node = heappop(pq)
             current.next = node
