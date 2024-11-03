@@ -15,6 +15,7 @@ class Solution:
                 max_area = max(max_area, h * w)
             stack.append(i)
 
+        heights.pop() # Remove the sentinel value
         return max_area
 
 
