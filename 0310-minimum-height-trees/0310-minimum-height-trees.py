@@ -11,6 +11,7 @@ class Solution:
 
         remainingNodes = n
         while remainingNodes>2:
+            remainingNodes-=len(leaves)
             newLeaves = []
             while leaves:
                 leaf=leaves.pop()
@@ -18,7 +19,7 @@ class Solution:
                 graph[neighbor].remove(leaf)
                 if len(graph[neighbor])==1:
                     newLeaves.append(neighbor)
-                remainingNodes-=1
+                
             leaves = newLeaves
         return leaves
 
