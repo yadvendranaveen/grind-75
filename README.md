@@ -132,6 +132,7 @@ https://www.techinterviewhandbook.org/grind75
 ## Two Pointers
 |  |
 | ------- |
+| [0202-happy-number](https://github.com/yadvendranaveen/grind-75/tree/master/0202-happy-number) |
 | [0295-find-median-from-data-stream](https://github.com/yadvendranaveen/grind-75/tree/master/0295-find-median-from-data-stream) |
 ## Design
 |  |
@@ -149,4 +150,12 @@ https://www.techinterviewhandbook.org/grind75
 |  |
 | ------- |
 | [0295-find-median-from-data-stream](https://github.com/yadvendranaveen/grind-75/tree/master/0295-find-median-from-data-stream) |
+## Hash Table
+|  |
+| ------- |
+| [0202-happy-number](https://github.com/yadvendranaveen/grind-75/tree/master/0202-happy-number) |
+## Math
+|  |
+| ------- |
+| [0202-happy-number](https://github.com/yadvendranaveen/grind-75/tree/master/0202-happy-number) |
 <!---LeetCode Topics End-->
