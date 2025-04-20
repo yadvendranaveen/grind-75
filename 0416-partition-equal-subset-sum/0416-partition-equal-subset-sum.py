@@ -11,7 +11,7 @@ class Solution:
         @cache
         def backtrack(idx, total):
             if total==target:   return True
-            if idx==n:  return False
+            if total>target or idx==n:  return False
 
             return backtrack(idx+1, total+nums[idx]) or backtrack(idx+1, total)
 
