@@ -8,11 +8,12 @@ class Solution:
 
         n = len(nums)
 
-        @cache
+        memo = {}
         def backtrack(idx, total):
             if total==target:   return True
             if total>target or idx==n:  return False
-
-            return backtrack(idx+1, total+nums[idx]) or backtrack(idx+1, total)
+            if (idx,total) in memo:    return memo[(idx,total)]
+            memo[(idx,total)] = backtrack(idx+1, total+nums[idx]) or backtrack(idx+1, total)
+            return memo[(idx,total)]
 
         return backtrack(0,0)
