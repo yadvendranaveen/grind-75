@@ -1,13 +1,18 @@
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
-        total = sum(nums)
-        if total%2==1:  return False 
+        
+        target = sum(nums)
+        if target%2==1:
+            return False
+        target //= 2
+
+        n = len(nums)
 
         @cache
-        def dfs(idx, rem):
-            if rem==0:  return True
-            if idx<0:   return False
-            return dfs(idx-1, rem) or dfs(idx-1, rem-nums[idx])
+        def backtrack(idx, total):
+            if total==target:   return True
+            if idx==n:  return False
 
-        return dfs(len(nums)-1, total//2)
-        
+            return backtrack(idx+1, total+nums[idx]) or backtrack(idx+1, total)
+
+        return backtrack(0,0)
