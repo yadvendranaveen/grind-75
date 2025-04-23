@@ -1,11 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        memo = {}
-        def backtrack(curr):
-            if curr<0:  return 0
-            if curr==0: return 1
-            if curr in memo:    return memo[curr]
-            memo[curr] = backtrack(curr-1)+backtrack(curr-2)
-            return memo[curr]
-
-        return backtrack(n)
+        dp = [1, 2] 
+        for i in range(2, n+1):
+            dp.append(dp[i-1]+dp[i-2])
+        return dp[n-1]
