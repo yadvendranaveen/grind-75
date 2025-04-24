@@ -1,12 +1,11 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        running_min = math.inf
-        max_profit = 0
-
-        for price in prices:
-            running_min = min(running_min, price)
-            max_profit = max(max_profit, price-running_min)
-        return max_profit
+        l2r_min = list(accumulate(prices, min))
+        r2l_max = list(accumulate(reversed(prices), max))[::-1]
+        ans = 0
+        for l,h in zip(l2r_min, r2l_max):
+            ans = max(ans, h-l)
+        return ans
             
             
 
