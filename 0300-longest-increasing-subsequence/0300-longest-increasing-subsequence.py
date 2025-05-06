@@ -1,9 +1,11 @@
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
-        n = len(nums)
-        dp = [1]*n
-        for i in range(n):
-            for j in range(i):
-                if nums[i]>nums[j]:
-                    dp[i] = max(dp[i], dp[j]+(nums[i]>nums[j]))
-        return max(dp)
+        stack = []
+        for num in nums:
+            if not stack or stack[-1]<num:
+                stack.append(num)
+                continue
+            idx = bisect_left(stack, num)
+            stack[idx] = num
+            
+        return len(stack)
