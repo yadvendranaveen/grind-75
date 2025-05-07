@@ -2,10 +2,9 @@ class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         stack = []
         for num in nums:
-            if not stack or stack[-1]<num:
+            idx = bisect_left(stack, num)
+            if idx==len(stack):
                 stack.append(num)
-            else:
-                idx = bisect_left(stack, num)
+            else:   
                 stack[idx] = num
-            
         return len(stack)
