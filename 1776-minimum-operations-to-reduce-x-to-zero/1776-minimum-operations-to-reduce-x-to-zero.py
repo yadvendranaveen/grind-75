@@ -13,7 +13,7 @@ class Solution:
         suffix_map = {}
         for j in range(n + 1):
             s = suffix_sum[j]
-            if s not in suffix_map or j < suffix_map[s]:
+            if s not in suffix_map :#or j < suffix_map[s]:
                 suffix_map[s] = j
         
         min_picks = float('inf')
