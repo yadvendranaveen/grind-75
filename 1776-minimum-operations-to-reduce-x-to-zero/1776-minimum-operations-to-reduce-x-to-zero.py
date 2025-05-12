@@ -13,14 +13,14 @@ class Solution:
         suffix_map = {}
         for j in range(n + 1):
             s = suffix_sum[j]
-            if s not in suffix_map :#or j < suffix_map[s]:
+            if s not in suffix_map:
                 suffix_map[s] = j
         
         min_picks = float('inf')
         for i in range(n + 1):
             current_sum = prefix_sum[i]
             if current_sum > c:
-                continue
+                break
             needed = c - current_sum
             if needed in suffix_map:
                 j = suffix_map[needed]
