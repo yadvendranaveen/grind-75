@@ -14,10 +14,10 @@ class FileSystem:
     def _traverse_to_dir(self, path:str):
         if path =='/':  
             return (path, self.root)
-        queue = path[1:].split('/')
+        queue = deque(path[1:].split('/'))
         curr = self.root
         while queue:
-            name = queue.pop(0)
+            name = queue.popleft()
             curr = curr.children[name]
         return (name, curr)
 
